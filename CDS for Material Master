@@ -1,2 +1,9 @@
-Creating CDS View in Eclipse using ADT.
-Displaying the Material Master Data using aliases.
+define view ZCDS_V1 as select from MARA
+{
+  MATNR as Material Number,
+  CASE MTART
+    WHEN 'ROH' THEN 'RAW MATERIAL'
+    ELSE 'NA' END AS MATERIAL TYPE,
+  MBRSH AS INDUSTRY SECTOR,
+  MEINS AS BASIC UNIT OF MEASUREMENT.
+}
